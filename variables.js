@@ -1,4 +1,8 @@
 //Global function variable :P
+function count(){
+    window["score"].increment();
+}
+
 function after_end (obj_pos) {
     // if 
     // alert('iudsgiug');
@@ -9,6 +13,7 @@ function after_end (obj_pos) {
         {
             clearInterval(window['play_again']);
             (window["blast"]).play();
+            (window["score"]).tell_score();
             return 1;
         }
         car.going_left();
@@ -19,6 +24,7 @@ function after_end (obj_pos) {
         {
             clearInterval(window['play_again']);
             (window["blast"]).play();
+            (window["score"]).tell_score();
             return 1;
         }
         car.going_right();
@@ -74,3 +80,4 @@ car = new Car();
 my_car = new MyCar();
 var play_again = true;
 var blast = new Blast();
+var score = new Score();
