@@ -46,6 +46,15 @@ function after_end (obj_pos) {
     // }
     // (window["Objects"]).splice(0,1);
     // (window["Obs"]).splice(0,1);
+	rounds=rounds+1;
+//console.log(" inc no of rounds-> "+ rounds);
+if(rounds==3)
+{
+clearInterval(play_again);
+speak.play('level 2 ');
+play_again = setInterval(play, (8-rounds)*1000);
+}
+
 }
 
 
@@ -81,3 +90,5 @@ my_car = new MyCar();
 var play_again = true;
 var blast = new Blast();
 var score = new Score();
+var level=1000;
+var rounds=1;
